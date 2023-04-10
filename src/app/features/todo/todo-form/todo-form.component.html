@@ -1,0 +1,57 @@
+<div class="card">
+    <div class="card-body">
+        <form #f="ngForm" (ngSubmit)="handleAddTask()" novalidate>
+            <div class="mb-3">
+                <input 
+                    [(ngModel)]="task.name"
+                    class="form-control"
+                    type="text"
+                    placeholder="Task name"
+                    name="name"
+                    required
+                    minlength="3"
+                    #name="ngModel"
+                    pattern="[a-zA-Z]+"
+                />
+                <div class="text-danger">
+                    <small *ngIf="name.touched && name.errors?.['required']">Field is required</small>
+                    <small *ngIf="name.touched && name.errors?.['minlength']">Minimum 3 characters required</small>
+                    <small *ngIf="name.touched && name.errors?.['pattern']">Only alphabets</small>
+                </div>
+            </div>
+            <div class="mb-3">
+                <textarea
+                    [(ngModel)]="task.desc"
+                    class="form-control"
+                    rows="3"
+                    placeholder="Task description"
+                    name="desc"
+                    required
+                    #desc="ngModel"
+                ></textarea>
+                <div class="text-danger">
+                    <small *ngIf="desc.touched && desc.errors?.['required']">Field is required</small>
+                </div>
+            </div>
+            <div class="mb-3">
+                <input
+                    [(ngModel)]="task.priority"
+                    class="form-control"
+                    type="number"
+                    placeholder="Task priority"
+                    name="priority"
+                    required
+                    pattern="[1-3]"
+                    #priority="ngModel"
+                />
+                <div class="text-danger">
+                    <small *ngIf="priority.touched && priority.errors?.['required']">Field is required</small>
+                    <small *ngIf="priority.touched && priority.errors?.['pattern']">Only 1, 2 or 3 allowed</small>
+                </div>
+            </div>
+            <div class="d-grid">
+                <button [disabled]="f.invalid" class="btn btn-success" type="submit">Add</button>
+            </div>
+        </form>
+    </div>
+</div>

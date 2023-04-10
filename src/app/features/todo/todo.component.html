@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-lg-4 col-md-4">
+        <app-todo-form (addTaskEvent)="handleUpdateTodoUI($event)"></app-todo-form>
+    </div>
+    <div class="col-lg-8 col-md-8">
+        <app-todo-list
+            [highPriorities]="highPriorityList"
+            [mediumPriorities]="mediumPriorityList"
+            [lowPriorities]="lowPriorityList"
+            (deleteTaskEvt)="handleUpdateTodoUI($event)"
+        ></app-todo-list>
+    </div>
+</div>
