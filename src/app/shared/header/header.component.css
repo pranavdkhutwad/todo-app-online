@@ -2,3 +2,7 @@
     border-bottom: 5px solid red;
     padding-bottom: 0;
 }
+
+.logout {
+    cursor: pointer;
+}

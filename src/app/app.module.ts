@@ -16,6 +16,7 @@ import { TodoItemComponent } from './features/todo/todo-list/todo-item/todo-item
 
 import { TodoService } from './features/todo/services/todo.service';
 import { TodoEditComponent } from './features/todo/todo-edit/todo-edit.component';
+import { LoginComponent } from './features/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { TodoEditComponent } from './features/todo/todo-edit/todo-edit.component
     TodoFormComponent,
     TodoListComponent,
     TodoItemComponent,
-    TodoEditComponent
+    TodoEditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
